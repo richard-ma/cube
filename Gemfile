@@ -38,8 +38,11 @@ group :development, :test do
     gem 'rspec-rails'
     gem 'factory_girl_rails'
     gem 'capybara'
-    gem 'guard-rspec', require: false
+    gem 'guard-rspec', :require => false
 end
+
+# cron job
+gem 'whenever', :require => false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
