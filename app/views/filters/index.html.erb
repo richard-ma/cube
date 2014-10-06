@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>Filter type</th>
       <th>Regex</th>
-      <th>Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,8 +12,8 @@
   <tbody>
     <% @filters.each do |filter| %>
       <tr>
+        <td><%= filter.filter_type %></td>
         <td><%= filter.regex %></td>
-        <td><%= filter.type %></td>
         <td><%= link_to 'Show', filter %></td>
         <td><%= link_to 'Edit', edit_filter_path(filter) %></td>
         <td><%= link_to 'Destroy', filter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,3 +1,3 @@
 class Filter < ActiveRecord::Base
-    belongs_to :tutorial
+  belongs_to :tutorial
 end

@@ -1,1 +1,1 @@
-json.extract! @filter, :id, :regex, :type, :created_at, :updated_at
+json.extract! @filter, :id, :filter_type, :regex, :created_at, :updated_at

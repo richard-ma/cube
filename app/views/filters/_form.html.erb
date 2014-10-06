@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :filter_type %><br>
+    <%= f.text_field :filter_type %>
+  </div>
+  <div class="field">
     <%= f.label :regex %><br>
     <%= f.text_field :regex %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :tutorial_id %><br>
+    <%= f.select :tutorial_id, options_for_select(Tutorial.all.ids) %>
   </div>
   <div class="actions">
     <%= f.submit %>

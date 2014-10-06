@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Filter type:</strong>
+  <%= @filter.filter_type %>
+</p>
+
+<p>
   <strong>Regex:</strong>
   <%= @filter.regex %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @filter.type %>
+  <strong>Tutorial ID:</strong>
+  <%= @filter.tutorial_id %>
 </p>
 
 <%= link_to 'Edit', edit_filter_path(@filter) %> |

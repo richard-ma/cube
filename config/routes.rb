@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'crawler/crawl'
+  resources :posts
 
   resources :filters
+
+  get 'crawler/crawl'
 
   resources :tutorials
 

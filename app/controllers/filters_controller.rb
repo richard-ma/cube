@@ -69,6 +69,6 @@ class FiltersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def filter_params
-      params.require(:filter).permit(:regex, :type)
+      params.require(:filter).permit(:filter_type, :regex, :tutorial_id)
     end
 end

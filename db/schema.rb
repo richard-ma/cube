@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004134323) do
+ActiveRecord::Schema.define(version: 20141004152614) do
 
   create_table "filters", force: true do |t|
+    t.string   "filter_type"
     t.string   "regex"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tutorial_id"
   end
 
   create_table "tutorials", force: true do |t|

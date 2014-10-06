@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "filters/edit", :type => :view do
   before(:each) do
     @filter = assign(:filter, Filter.create!(
-      :regex => "MyString",
-      :type => ""
+      :filter_type => "MyString",
+      :regex => "MyString"
     ))
   end
 
@@ -13,9 +13,9 @@ RSpec.describe "filters/edit", :type => :view do
 
     assert_select "form[action=?][method=?]", filter_path(@filter), "post" do
 
-      assert_select "input#filter_regex[name=?]", "filter[regex]"
+      assert_select "input#filter_filter_type[name=?]", "filter[filter_type]"
 
-      assert_select "input#filter_type[name=?]", "filter[type]"
+      assert_select "input#filter_regex[name=?]", "filter[regex]"
     end
   end
 end
