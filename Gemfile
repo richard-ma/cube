@@ -6,7 +6,7 @@ gem 'rails', '4.1.6'
 
 # Database
 # Use mysql2 as the database
-gem 'mysql2'
+gem 'mysql2', group: [:development, :test]
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -57,6 +57,9 @@ gem 'whenever', :require => false
 # gem 'debugger', group: [:development, :test]
 
 # for heroku
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 ruby '2.0.0'
