@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004152614) do
+ActiveRecord::Schema.define(version: 20141006152615) do
 
   create_table "filters", force: true do |t|
     t.string   "filter_type"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20141004152614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tutorial_id"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tutorials", force: true do |t|
