@@ -19,6 +19,10 @@
     <%= f.label :link %><br>
     <%= f.text_field :link %>
   </div>
+  <div class="field">
+    <%= f.label :tutorial_id %><br>
+    <%= f.select :tutorial_id, options_for_select(Tutorial.all.ids) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -23,6 +23,11 @@
           <td><%= filter.filter_type %> <%= filter.regex %></td>
         <% end %>
       </tr>
+      <tr>
+        <% tutorial.post.each do |post| %>
+          <td><%= post.title %> <%= post.link %></td>
+        <% end %>
+      </tr>
     <% end %>
   </tbody>
 </table>
