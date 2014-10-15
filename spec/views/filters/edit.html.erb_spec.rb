@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "filters/edit", :type => :view do
   before(:each) do
-    @filter = assign(:filter, Filter.create!(
-      :filter_type => "MyString",
-      :regex => "MyString"
-    ))
+    @filter = create :filter
   end
 
   it "renders the edit filter form" do

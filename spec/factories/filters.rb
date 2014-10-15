@@ -1,13 +1,18 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :any_title_will_accept_filter do
-    filter_type Filter::TITLE_FILTER
+  factory :filter do
+    filter_type Filter::TYPE[:title]
     regex '.*'
   end
 
-  factory :any_link_will_accept_filter do
-    filter_type Filter::LINK_FILTER
+  factory :title_filter, class: Filter do
+    filter_type Filter::TYPE[:title]
+    regex '.*'
+  end
+
+  factory :link_filter, class: Filter do
+    filter_type Filter::TYPE[:link]
     regex '.*'
   end
 end
