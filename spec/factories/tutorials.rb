@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :tutorial do
-    rss_feed "MyString"
-    title "MyString"
+    rss_feed "http://rss.com/rss"
+    title "Tutorial Title"
   end
 end
