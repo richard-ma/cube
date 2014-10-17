@@ -1,6 +1,6 @@
 class Tutorial < ActiveRecord::Base
-  has_many :filter
-  has_many :post
+  has_many :filters
+  has_many :posts
 
   validates :rss_feed, presence: TRUE
   validates :title,    presence: TRUE
