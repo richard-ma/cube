@@ -1,15 +1,19 @@
 class Filter < ActiveRecord::Base
   belongs_to :tutorial
 
-  TITLE_FILTER = 'title'
-  LINK_FILTER = 'link'
+  validates :filter_type, presence: TRUE
+  validates :regex, presence: TRUE
 
-  def accept? (item)
-    if (self.filter_type == TITLE_FILTER and item.title =~ /self.regex/) or
-      (self.filter_type == LINK_FILTER and item.link =~ /self.regex/)
-      return TRUE
+  # Filter type constance
+  TYPE_TITLE    = 'title'
+  TYPE_LINK     = 'link'
+
+  def accept?(post)
+    if (self.filter_type == TYPE_TITLE and Regexp.new(self.regex) =~ post.title) or
+      (self.filter_type == TYPE_LINK and Regexp.new(self.regex) =~ post.link)
+      return true
     else
-      return FALSE
+      return false
     end
   end
 end

@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "tutorials/edit", :type => :view do
   before(:each) do
-    @tutorial = assign(:tutorial, Tutorial.create!(
-      :rss_feed => "MyString",
-      :title => "MyString"
-    ))
+    @tutorial = create :tutorial
   end
 
   it "renders the edit tutorial form" do

@@ -2,15 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "posts/show", :type => :view do
   before(:each) do
-    @post = assign(:post, Post.create!(
-      :title => "Title",
-      :link => "Link"
-    ))
+    @post = create(:post, {:title => "Title", :link => "http://Link.com"})
   end
 
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Title/)
-    expect(rendered).to match(/Link/)
+    expect(rendered).to match(/http:\/\/Link\.com/)
   end
 end
