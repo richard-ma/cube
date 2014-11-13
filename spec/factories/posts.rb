@@ -17,7 +17,7 @@ FactoryGirl.define do
   end
 
   factory :empty_post, class: Post do
-    title ""
+    title "title"
     link ""
   end
 end

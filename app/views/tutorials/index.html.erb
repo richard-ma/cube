@@ -19,12 +19,12 @@
         <td><%= link_to 'Destroy', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <tr>
-        <% tutorial.filter.each do |filter| %>
+        <% tutorial.filters.each do |filter| %>
           <td><%= filter.filter_type %> <%= filter.regex %></td>
         <% end %>
       </tr>
       <tr>
-        <% tutorial.post.each do |post| %>
+        <% tutorial.posts.each do |post| %>
           <td><%= post.title %> <%= post.link %></td>
         <% end %>
       </tr>
