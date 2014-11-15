@@ -11,7 +11,7 @@ RSpec.describe Tutorial, :type => :model do
     expect((build :tutorial, {:title => nil}).valid?).to be false
   end
 
-  it "rss feed should be a URI" do
+  it "rss feed should be URI" do
     expect((build :tutorial, {:rss_feed =>'http://valid.link.com'}).valid?).to be true
     expect((build :tutorial, {:rss_feed =>'this#is@an*invalid@link'}).valid?).to be false
   end
@@ -28,6 +28,7 @@ RSpec.describe Tutorial, :type => :model do
   it "with 5 filters" do
     # create filters test
     expect(create(:tutorial_with_posts).filters.length).to eq 5
+    expect(build(:tutorial_with_posts).filters.length).to eq 5
 
     # TODO build filters test
   end

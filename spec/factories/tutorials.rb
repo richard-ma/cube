@@ -16,9 +16,9 @@ FactoryGirl.define do
         create_list(:filter, evaluator.filters_count, tutorial: tutorial)
       end
       # TODO build test
-      #after(:build) do |tutorial, evaluator|
-        #build_list(:post, evaluator.posts_count, tutorial: tutorial)
-      #end
+      after(:build) do |tutorial, evaluator|
+        build_list(:post, evaluator.posts_count, tutorial: tutorial)
+      end
     end
   end
 end
