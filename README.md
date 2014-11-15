@@ -8,8 +8,6 @@ sudo apt-get install nodejs # JavaScript Runtime
 
 sudo apt-get install libxml2-dev libxslt1-dev # For RSS Parse
 
-bundle config build.nokogiri --use-system-libraries
-
 bundle install
 
 rake db:migrate
