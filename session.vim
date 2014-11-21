@@ -259,27 +259,17 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 config.ru
 silent! argdel *
-edit config.ru
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
+enew
 let s:cpo_save=&cpo
 set cpo&vim
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
-nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
-nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
 nmap <buffer> gf <Plug>RailsFind
-nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -294,8 +284,8 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=:#
-setlocal commentstring=#\ %s
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -306,14 +296,14 @@ setlocal nocursorbind
 setlocal nocursorcolumn
 set cursorline
 setlocal cursorline
-setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'ruby'
-setlocal filetype=ruby
+if &filetype != ''
+setlocal filetype=
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -326,18 +316,18 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=croql
+setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=0
-setlocal include=^\\s*\\<\\(load\\>\\|require\\>\\|autoload\\s*:\\=[\"']\\=\\h\\w*[\"']\\=,\\)
+setlocal include=
 setlocal includeexpr=RailsIncludeexpr()
-setlocal indentexpr=GetRubyIndent(v:lnum)
-setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=else,=elsif,=when,=ensure,=rescue,==begin,==end
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=ri
+setlocal keywordprg=
 set linebreak
 setlocal linebreak
 setlocal nolisp
@@ -351,7 +341,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=~/Projects/cube,~/Projects/cube/app,~/Projects/cube/app/models,~/Projects/cube/app/controllers,~/Projects/cube/app/helpers,~/Projects/cube/config,~/Projects/cube/lib,~/Projects/cube/app/views,~/Projects/cube/test,~/Projects/cube/test/unit,~/Projects/cube/test/functional,~/Projects/cube/test/integration,~/Projects/cube/spec,~/Projects/cube/spec/models,~/Projects/cube/spec/controllers,~/Projects/cube/spec/helpers,~/Projects/cube/spec/views,~/Projects/cube/spec/lib,~/Projects/cube/spec/requests,~/Projects/cube/spec/integration,~/Projects/cube/app/*,~/Projects/cube/vendor,~/Projects/cube/vendor/plugins/*/lib,~/Projects/cube/vendor/plugins/*/test,~/Projects/cube/vendor/rails/*/lib,~/Projects/cube/vendor/rails/*/test,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby/2.0.0,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby/2.0.0/i686-linux,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby/2.0.0,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby/2.0.0/i686-linux,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/i686-linux
+setlocal path=.,~/Projects/cube,~/Projects/cube/app,~/Projects/cube/app/models,~/Projects/cube/app/controllers,~/Projects/cube/app/helpers,~/Projects/cube/config,~/Projects/cube/lib,~/Projects/cube/app/views,~/Projects/cube/test,~/Projects/cube/test/unit,~/Projects/cube/test/functional,~/Projects/cube/test/integration,~/Projects/cube/spec,~/Projects/cube/spec/models,~/Projects/cube/spec/controllers,~/Projects/cube/spec/helpers,~/Projects/cube/spec/views,~/Projects/cube/spec/lib,~/Projects/cube/spec/requests,~/Projects/cube/spec/integration,~/Projects/cube/app/*,~/Projects/cube/vendor,~/Projects/cube/vendor/plugins/*/lib,~/Projects/cube/vendor/plugins/*/test,~/Projects/cube/vendor/rails/*/lib,~/Projects/cube/vendor/rails/*/test,/usr/include,
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -360,10 +350,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=2
+setlocal shiftwidth=4
 setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=2
+setlocal smartindent
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
@@ -372,11 +362,11 @@ setlocal statusline=%!Pl#Statusline(0,1)
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'ruby'
-setlocal syntax=ruby
+if &syntax != ''
+setlocal syntax=
 endif
 setlocal tabstop=4
-setlocal tags=~/Projects/cube/tmp/tags,~/Projects/cube/.git/ruby.tags,~/Projects/cube/.git/tags,./tags,./TAGS,tags,TAGS,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby/2.0.0/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby/2.0.0/i686-linux/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/site_ruby/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby/2.0.0/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby/2.0.0/i686-linux/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/vendor_ruby/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/tags,~/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/i686-linux/tags,~/Projects/cube/tags
+setlocal tags=~/Projects/cube/tmp/tags,~/Projects/cube/.git/tags,./tags,./TAGS,tags,TAGS,~/Projects/cube/tags
 setlocal textwidth=500
 setlocal thesaurus=
 setlocal noundofile
@@ -385,13 +375,6 @@ setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
