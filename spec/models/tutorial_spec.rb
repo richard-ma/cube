@@ -28,7 +28,6 @@ RSpec.describe Tutorial, :type => :model do
   it "with 5 filters" do
     # create filters test
     expect(create(:tutorial_with_posts).filters.length).to eq 5
-    expect(build(:tutorial_with_posts).filters.length).to eq 5
 
     # TODO build filters test
   end
