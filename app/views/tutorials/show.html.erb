@@ -10,7 +10,7 @@
   <%= @tutorial.title %>
 </p>
 <p>
-  <% @tutorial.filter.each do |filter| %>
+  <% @tutorial.filters.each do |filter| %>
     <%= filter.filter_type %> <%= filter.regex %><br />
   <% end %>
 </p>
