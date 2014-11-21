@@ -265,13 +265,6 @@ wincmd t
 set winheight=1 winwidth=1
 argglobal
 enew
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
-nmap <buffer> gf <Plug>RailsFind
-let &cpo=s:cpo_save
-unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -322,7 +315,7 @@ setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=0
 setlocal include=
-setlocal includeexpr=RailsIncludeexpr()
+setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
@@ -341,7 +334,7 @@ set number
 setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=.,~/Projects/cube,~/Projects/cube/app,~/Projects/cube/app/models,~/Projects/cube/app/controllers,~/Projects/cube/app/helpers,~/Projects/cube/config,~/Projects/cube/lib,~/Projects/cube/app/views,~/Projects/cube/test,~/Projects/cube/test/unit,~/Projects/cube/test/functional,~/Projects/cube/test/integration,~/Projects/cube/spec,~/Projects/cube/spec/models,~/Projects/cube/spec/controllers,~/Projects/cube/spec/helpers,~/Projects/cube/spec/views,~/Projects/cube/spec/lib,~/Projects/cube/spec/requests,~/Projects/cube/spec/integration,~/Projects/cube/app/*,~/Projects/cube/vendor,~/Projects/cube/vendor/plugins/*/lib,~/Projects/cube/vendor/plugins/*/test,~/Projects/cube/vendor/rails/*/lib,~/Projects/cube/vendor/rails/*/test,/usr/include,
+setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -359,14 +352,14 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=%!Pl#Statusline(0,1)
-setlocal suffixesadd=.rb
+setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
 if &syntax != ''
 setlocal syntax=
 endif
 setlocal tabstop=4
-setlocal tags=~/Projects/cube/tmp/tags,~/Projects/cube/.git/tags,./tags,./TAGS,tags,TAGS,~/Projects/cube/tags
+setlocal tags=
 setlocal textwidth=500
 setlocal thesaurus=
 setlocal noundofile
