@@ -16,19 +16,9 @@ RSpec.describe Tutorial, :type => :model do
     expect((build :tutorial, {:rss_feed =>'this#is@an*invalid@link'}).valid?).to be false
   end
 
-  it "with 5 posts" do
+  it "with 5 posts and 5 filters" do
     # create posts test
-    expect(create(:tutorial_with_posts).posts.length).to eq 5
-
-    # TODO build posts test
-    #tutorial_with_posts = build(:tutorial_with_posts)
-    #expect(tutorial_with_posts.posts.length).to eq 5
-  end
-
-  it "with 5 filters" do
-    # create filters test
-    expect(create(:tutorial_with_posts).filters.length).to eq 5
-
-    # TODO build filters test
+    expect(create(:tutorial_with_posts_and_filters).posts.length).to eq 5
+    expect(create(:tutorial_with_posts_and_filters).filters.length).to eq 5
   end
 end

@@ -5,7 +5,7 @@ FactoryGirl.define do
     rss_feed "http://rss.com/rss"
     title "Tutorial Title"
 
-    factory :tutorial_with_posts do
+    factory :tutorial_with_posts_and_filters do
       ignore do
         posts_count 5
         filters_count 5
