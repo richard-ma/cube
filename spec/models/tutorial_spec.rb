@@ -11,7 +11,7 @@ RSpec.describe Tutorial, :type => :model do
     expect((build :tutorial, {:title => nil}).valid?).to be false
   end
 
-  it "rss feed should be a URI" do
+  it "rss feed should be URI" do
     expect((build :tutorial, {:rss_feed =>'http://valid.link.com'}).valid?).to be true
     expect((build :tutorial, {:rss_feed =>'this#is@an*invalid@link'}).valid?).to be false
   end
