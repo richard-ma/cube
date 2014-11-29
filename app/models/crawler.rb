@@ -16,8 +16,15 @@ class Crawler < ActiveRecord::Base
       end
 
       if acceptFlg
+        post.save
         tutorial.posts << post # append post to tutorial posts
       end
+
+      # update tutorial updated_at
+      tutorial.updated_at = Time.now
+
+      # save tutorial changes
+      tutorial.save
     end
   end
 
@@ -41,6 +48,7 @@ class Crawler < ActiveRecord::Base
   def _parseItem item
     title = item.title
     link = item.url
-    return Post.new :title => title, :link => link
+    create_at = item.published
+    return Post.new :title => title, :link => link, :created_at => create_at, :updated_at => create_at
   end
 end
