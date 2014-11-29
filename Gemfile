@@ -33,6 +33,9 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem "autoprefixer-rails"
 
+# XML parse
+gem "nokogiri"
+
 # Development and Testing
 group :development, :test do
     gem 'rspec-rails'
