@@ -6,7 +6,7 @@ Tutorial Site
 # SYSTEM REQUIREMENTS
 sudo apt-get install nodejs # JavaScript Runtime
 
-sudo apt-get install libxml2-dev libxslt1-dev # For RSS Parse
+sudo apt-get install libxml2-dev libxslt1-dev libcurl3 libcurl3-gnutls libcurl4-openssl-dev # For RSS Parse
 
 bundle install
 
