@@ -7,6 +7,11 @@ class Crawler < ActiveRecord::Base
     filters = tutorial.filters
 
     posts.each do |post|
+      # ignore old posts
+      # if created_at == updated_at the tutorial is new to first crawl
+      next if tutorial.created_at < tutorial.updated_at and post.created_at < tutorial.updated_at
+
+      # filtering
       acceptFlg = true
 
       filters.each do |filter|
@@ -19,13 +24,11 @@ class Crawler < ActiveRecord::Base
         post.save
         tutorial.posts << post # append post to tutorial posts
       end
-
-      # update tutorial updated_at
-      tutorial.updated_at = Time.now
-
-      # save tutorial changes
-      tutorial.save
     end
+
+    # save tutorial changes and update updated_at
+    tutorial.updated_at = Time.now
+    tutorial.save
   end
 
   def _crawl rss
@@ -49,6 +52,6 @@ class Crawler < ActiveRecord::Base
     title = item.title
     link = item.url
     create_at = item.published
-    return Post.new :title => title, :link => link, :created_at => create_at, :updated_at => create_at
+    return Post.new :title => title, :link => link, :created_at => create_at
   end
 end
