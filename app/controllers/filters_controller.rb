@@ -1,5 +1,6 @@
 class FiltersController < ApplicationController
   before_action :set_filter, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /filters
   # GET /filters.json
