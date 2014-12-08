@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :admin do
+    email 'cubeadmin@cube.com'
+    password 'cubeadmin'
+    password_confirmation 'cubeadmin'
   end
 end

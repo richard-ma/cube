@@ -36,6 +36,17 @@ RSpec.describe FiltersController, :type => :controller do
   # FiltersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  # devise sign in and sign out
+  before :each do
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
+    @admin = create :admin
+    sign_in @admin
+  end
+
+  after :each do
+    sign_out @admin
+  end
+
   describe "GET index" do
     it "assigns all filters as @filters" do
       filter = Filter.create! valid_attributes

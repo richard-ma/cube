@@ -36,6 +36,17 @@ RSpec.describe PostsController, :type => :controller do
   # PostsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  # devise sign in and sign out
+  before :each do
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
+    @admin = create :admin
+    sign_in @admin
+  end
+
+  after :each do
+    sign_out @admin
+  end
+
   describe "GET index" do
     it "assigns all posts as @posts" do
       post = Post.create! valid_attributes

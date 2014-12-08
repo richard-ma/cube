@@ -1,6 +1,6 @@
 class TutorialsController < ApplicationController
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!, :except => [:index, :show]
+  before_action :authenticate_admin!, :except => [:index, :show]
 
   # GET /tutorials
   # GET /tutorials.json
