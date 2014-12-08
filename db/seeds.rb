@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Admin.create(email: 'cubeadmin@cube.com', password: 'cubeadmin', password_confirmation: 'cubeadmin')
