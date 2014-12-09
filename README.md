@@ -1,6 +1,12 @@
 cube
 ====
 
+master:
+[![Build Status](https://travis-ci.org/richard-ma/cube.png?branch=master)](https://travis-ci.org/richard-ma/cube)
+
+dev:
+[![Build Status](https://travis-ci.org/richard-ma/cube.png?branch=dev)](https://travis-ci.org/richard-ma/cube)
+
 Tutorial Site
 
 # SYSTEM REQUIREMENTS
