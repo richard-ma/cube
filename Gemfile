@@ -1,5 +1,9 @@
-#source 'https://mirrors.ustc.edu.cn/rubygems/'
-source 'http://mirrors.aliyun.com/rubygems/'
+# use rubygems in travis-ci running
+if ENV['TRAVIS']
+  source 'https://rubygems.org'
+else
+  source 'http://mirrors.aliyun.com/rubygems/'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
