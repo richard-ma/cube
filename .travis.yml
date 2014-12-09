@@ -3,5 +3,7 @@ rvm:
   - 2.0.0
 bundler_args: --without production
 before_install:
+  - sudo apt-get install libxml2-dev libxslt1-dev libcurl3 libcurl3-gnutls libcurl4-openssl-dev
+  - sudo apt-get install libmysqlclient-dev
   - gem update --system
   - gem --version
