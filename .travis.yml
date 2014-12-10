@@ -11,6 +11,7 @@ before_install:
 
 before_script:
   - mysql -e "create database \`cube-test\`;"
+  - bundle exec rake travis:before_script
 
 rvm:
   - 2.0.0
