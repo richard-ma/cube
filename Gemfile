@@ -1,6 +1,9 @@
 # use rubygems in travis-ci running
 if ENV['TRAVIS']
   source 'https://rubygems.org'
+
+  # converails
+  gem 'coveralls', require: false
 else
   source 'http://mirrors.aliyun.com/rubygems/'
 end
