@@ -1,6 +1,7 @@
 cube
 ====
 [![Build Status](https://travis-ci.org/richard-ma/cube.png?branch=master)](https://travis-ci.org/richard-ma/cube)
+[![Coverage Status](https://coveralls.io/repos/richard-ma/cube/badge.png?branch=master)](https://coveralls.io/r/richard-ma/cube?branch=master)
 
 Tutorial Site
 
