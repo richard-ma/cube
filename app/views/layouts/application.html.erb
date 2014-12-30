@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<%# For device notification %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert%></p>
-<%# End for device notification %>
+<%# navbar section /app/views/shared/_navbar.html.erb %>
+<%= render 'shared/navbar' %>
+
+<%# alert message notification /app/views/shared/_alert.html.erb %>
+<%= render 'shared/message' %>
+
+<%# tag cloud /app/views/shared/_tag_cloud.html.erb %>
+<%= render 'shared/tag_cloud' %>
 
 <%= yield %>
 

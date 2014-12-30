@@ -67,7 +67,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
-    feedjira (1.5.0)
+    feedjira (1.6.0)
       curb (~> 0.8)
       loofah (~> 2.0)
       sax-machine (~> 1.0)
@@ -235,7 +235,6 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
-  sprockets-rails
   turbolinks
   uglifier (>= 1.3.0)
   whenever
