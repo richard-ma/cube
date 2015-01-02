@@ -10,7 +10,6 @@ RSpec.describe "tutorials/index", :type => :view do
 
   it "renders a list of tutorials" do
     render
-    assert_select "tr>td", :text => "http://rss.test/feed".to_s, :count => 2
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "h3>a", :text => "Title".to_s, :count => 2
   end
 end
