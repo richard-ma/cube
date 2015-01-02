@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="tutorials">
+    <% @tutorial.posts.each do |post| %>
+      <div class="col-sm-3">
+        <div class="thumbnail" style="height: 315px;">
+          <div class="caption">
+            <p class="pull-right">
+              <span class="badge"><%= 'NEW' if @tutorial.posts.first.id == post.id %></span>
+            </p>
+            <h3><%= link_to post.title, post.link %></h3>
+            <p>Published <%= time_ago_in_words post.created_at %> ago.</p>
+            <p>Last synchronized <%= time_ago_in_words post.updated_at %> ago.</p>
 
-<p>
-  <strong>Rss feed:</strong>
-  <%= @tutorial.rss_feed %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @tutorial.title %>
-</p>
-<p>
-  <% @tutorial.filters.each do |filter| %>
-    <%= filter.filter_type %> <%= filter.regex %><br />
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_tutorial_path(@tutorial) %> |
-<%= link_to 'Back', tutorials_path %>
+            <%# TODO: show this when admin_signin? %>
+            <%#<p><%= link_to 'Edit', edit_tutorial_path(@tutorial) </p>%>
+            <%#<p><%= link_to 'Back', tutorials_path </p>%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

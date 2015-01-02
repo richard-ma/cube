@@ -1,37 +1,23 @@
-<h1>Listing tutorials</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rss feed</th>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="row">
+    <div class="tutorials">
     <% @tutorials.each do |tutorial| %>
-      <tr>
-        <td><%= tutorial.rss_feed %></td>
-        <td><%= tutorial.title %></td>
-        <td><%= link_to 'Show', tutorial %></td>
-        <td><%= link_to 'Edit', edit_tutorial_path(tutorial) %></td>
-        <td><%= link_to 'Destroy', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <tr>
-        <% tutorial.filters.each do |filter| %>
-          <td><%= filter.filter_type %> <%= filter.regex %></td>
-        <% end %>
-      </tr>
-      <tr>
-        <% tutorial.posts.each do |post| %>
-          <td><%= post.title %> <%= post.link %></td>
-        <% end %>
-      </tr>
+      <div class="col-sm-3">
+        <div class="thumbnail" style="height: 315px;">
+          <div class="caption">
+            <p class="pull-right">
+              <span class="badge">tag</span>
+            </p>
+            <h3><%= link_to tutorial.title, tutorial %></h3>
+            <p><%= tutorial.posts.count %> post(s)</p>
+            <p>Last synchronized <%= time_ago_in_words tutorial.updated_at %> ago.</p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Tutorial', new_tutorial_path %>
+<%# TODO: add this to navbar dropdown menu %>
+<%#<%= link_to 'New Tutorial', new_tutorial_path %>%>
