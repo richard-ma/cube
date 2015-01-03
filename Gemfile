@@ -46,14 +46,14 @@ gem "feedjira"
 
 # Development and Testing
 group :development, :test do
-    gem 'rspec-rails'
-    gem 'factory_girl_rails'
-    gem 'capybara'
-    gem 'guard-rspec', :require => false
-end
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec', :require => false
 
-# cron job
-gem 'whenever', :require => false
+  # cron job
+  gem 'whenever', :require => false
+end
 
 # admin login
 gem 'devise'
