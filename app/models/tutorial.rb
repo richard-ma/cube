@@ -47,4 +47,10 @@ class Tutorial < ActiveRecord::Base
     self.updated_at = Time.now
     self.save
   end
+
+  def self.sync_all
+    Tutorial.all.each do |tutorial|
+      tutorial.sync
+    end
+  end
 end

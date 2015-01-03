@@ -18,3 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.minute do
+  runner "Tutorial.sync_all"
+end
+
+# run: whenever
+# change rails path to `which rails`
